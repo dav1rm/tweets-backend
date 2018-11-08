@@ -2,11 +2,12 @@ const express = require('express');
 
 const routes = express.Router();
 
-const EntregaController = require('./controllers/EntregaController');
+const TweetController = require('./controllers/TweetController');
+const LikeController = require('./controllers/LikeController');
 
 
-routes.get('/entregas', EntregaController.index);
-routes.post('/entregas', EntregaController.store);
-routes.post('/entregas/aceitar/:id', EntregaController.aceitar);
+routes.get('/tweets', TweetController.index);
+routes.post('/tweets', TweetController.store);
+routes.post('/likes/:id', LikeController.store);
 
 module.exports = routes;
